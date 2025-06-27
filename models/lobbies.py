@@ -1,12 +1,22 @@
 from pydantic import BaseModel
 from typing import List
 
+class LobbyRules(BaseModel):
+    credits_per_stage: int
+    bonus_per_loop: int
+
+    bonus_credit_per_N_tomes: int
+    
+    base_credit_increase_per_N_total_stages: int
+    instant_teleport_on_N_total_stages: int
+ 
+
 class Lobby(BaseModel):
     lobby_id: str
     host_id: str
 
     lobby_name: str
-    players: List[str] = []  
+    players: List[str] = []
     
     def save(self):
         with open(f"saves/lobbies/{self.lobby_id}.json", "w") as f:
