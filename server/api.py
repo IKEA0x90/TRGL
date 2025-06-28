@@ -3,7 +3,7 @@ from endpoints.lobbies import router as lobbies_router
 
 app = FastAPI(title="TRGL")
 
-app.include_router(lobbies_router)
+app.include_router(lobbies_router, prefix="/lobbies")
 
 if __name__ == "__main__":
     import uvicorn
