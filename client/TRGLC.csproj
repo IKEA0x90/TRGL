@@ -68,6 +68,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+      <HintPath>packages\WpfAnimatedGif.2.0.2\lib\net40\WpfAnimatedGif.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -106,6 +109,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -123,11 +127,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\main\yellow_portal.gif" />
     <Resource Include="resources\main\yellow_portal.ico" />
     <None Include="resources\main\yellow_portal.png" />
-    <None Include="resources\main\yellow_portal_tiles.jpg" />
-    <None Include="resources\main\yellow_portal_tiles.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="resources\items\blue\" />
@@ -138,6 +139,19 @@
     <Folder Include="resources\items\scrap\" />
     <Folder Include="resources\items\special\" />
     <Folder Include="resources\items\white\" />
+    <Folder Include="Shop\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\credits\black_credits.gif" />
+    <Resource Include="resources\credits\blue_credits.gif" />
+    <Resource Include="resources\credits\orange_credits.gif" />
+    <Resource Include="resources\credits\purple_credits.gif" />
+    <Resource Include="resources\credits\red_credits.gif" />
+    <Resource Include="resources\credits\white_credits.gif" />
+    <Resource Include="resources\credits\yellow_credits.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\credits\cyan_credits.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

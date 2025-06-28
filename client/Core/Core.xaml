@@ -3,13 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         xmlns:local="clr-namespace:TRGLC"
         mc:Ignorable="d"
         
         Loaded="Core_Loaded"
         
         Title="TRGLC" Height="1000" Width="1000" 
-        MaxWidth="1000" MaxHeight="1000" 
         HorizontalContentAlignment="Stretch" 
         VerticalContentAlignment="Stretch"
         ScrollViewer.VerticalScrollBarVisibility="Disabled" 
@@ -21,12 +21,12 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
-            <RowDefinition/>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Grid VerticalAlignment="Top" TextBlock.FontSize="20">
+        <Grid VerticalAlignment="Top">
          <!--Background="#FF302D6E"-->
 
             <Grid.ColumnDefinitions>
@@ -42,7 +42,7 @@
             </Grid.RowDefinitions>
 
             <Border Grid.Column="0" Background="White" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
-                    Tag="StickyButton">
+                    x:Name="Common" Tag="StickyButton" BorderBrush="Red">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
                 </Border.Effect>
@@ -51,7 +51,7 @@
             </Border>
 
             <Border Grid.Column="1" Background="Lime" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
-                    Tag="StickyButton">
+                    x:Name="Uncommon" Tag="StickyButton">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
                 </Border.Effect>
@@ -61,7 +61,7 @@
             </Border>
 
             <Border Grid.Column="2" Background="Red" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
-                    Tag="StickyButton">
+                    x:Name="Legendary" Tag="StickyButton">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
                 </Border.Effect>
@@ -70,7 +70,7 @@
             </Border>
 
             <Border Grid.Column="3" Background="Yellow" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
-                    Tag="StickyButton">
+                    x:Name="Boss" Tag="StickyButton">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
                 </Border.Effect>
@@ -79,8 +79,8 @@
                        />
             </Border>
 
-            <Border Grid.Column="0" Background="#FFC000C0" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
-                    Tag="StickyButton" Grid.Row="1">
+            <Border Grid.Column="0" Background="#FFCD00CD" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
+                    x:Name="Void" Tag="StickyButton" Grid.Row="1">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
                 </Border.Effect>
@@ -90,7 +90,7 @@
             </Border>
 
             <Border Grid.Column="1" Background="Blue" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
-                    Tag="StickyButton" Grid.Row="1">
+                    x:Name="Lunar" Tag="StickyButton" Grid.Row="1">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
                 </Border.Effect>
@@ -99,7 +99,7 @@
             </Border>
 
             <Border Grid.Column="2" Background="#FFFF8000" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
-                    Tag="StickyButton" Grid.Row="1">
+                    x:Name="Equipment" Tag="StickyButton" Grid.Row="1">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
                 </Border.Effect>
@@ -108,56 +108,111 @@
             </Border>
 
             <Border Grid.Column="3" Background="Gray" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
-                    Tag="StickyButton" Grid.Row="1">
+                    x:Name="Utility" Tag="StickyButton" Grid.Row="1">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
                 </Border.Effect>
-                <TextBlock Text="Other" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                <TextBlock Text="Utility" HorizontalAlignment="Center" VerticalAlignment="Center" 
                        FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier" Foreground="White"/>
             </Border>
         </Grid>
 
         <Grid Grid.Row="1">
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+            <ContentControl>
+                
+            </ContentControl>
 
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            
         </Grid>
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="500"/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/white_credits.gif"/>
+                <Image Grid.Column="1" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/yellow_credits.gif"/>
+                <Image Grid.Column="2" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/orange_credits.gif"/>
+                <Image Grid.Column="3" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/red_credits.gif"/>
                 
+                <Image Grid.Column="4" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/blue_credits.gif"/>
+                <Image Grid.Column="5" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/purple_credits.gif"/>
+                <Image Grid.Column="6" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/cyan_credits.gif"/>
+                <Image Grid.Column="7" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/black_credits.gif"/>
+
             </Grid>
 
-            <Border Grid.Column="2" Background="White" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
-                    Tag="StickyButton">
-                <Border.Effect>
-                    <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
-                </Border.Effect>
-                <TextBlock Text="Lobbies" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                       FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier"/>
-            </Border>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-            <Border Grid.Column="1" Background="White" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
-                    Tag="StickyButton">
+                <TextBlock Text="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier" Foreground="White"/>
+
+                <TextBlock Text="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier" Foreground="White"/>
+
+                <TextBlock Text="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier" Foreground="White"/>
+
+                <TextBlock Text="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier" Foreground="White"/>
+
+                <TextBlock Text="0" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier" Foreground="White"/>
+
+                <TextBlock Text="0" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier" Foreground="White"/>
+
+                <TextBlock Text="0" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier" Foreground="White"/>
+
+                <TextBlock Text="0" Grid.Column="7" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier" Foreground="White"/>
+
+            </Grid>
+
+            <Border Grid.Row="0" Grid.Column="2" Background="White" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
+                    x:Name="Profiles" Tag="StickyButton">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
                 </Border.Effect>
                 <TextBlock Text="Profiles" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier"/>
+            </Border>
+
+            <Border Grid.Row="1" Grid.Column="2" Background="White" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
+                    x:Name="Lobbies" Tag="StickyButton">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
+                </Border.Effect>
+                <TextBlock Text="Lobbies" HorizontalAlignment="Center" VerticalAlignment="Center" 
                        FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier"/>
             </Border>
 

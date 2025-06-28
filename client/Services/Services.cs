@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Media.Effects;
 
 namespace TRGLC.Services
 {
@@ -27,6 +31,24 @@ namespace TRGLC.Services
             }
 
             return matchingChildren;
+        }
+
+        public static void AnimateTransform(Border border, double toX, double toY) {
+            var tf = border.RenderTransform as TranslateTransform
+                     ?? new TranslateTransform();
+            border.RenderTransform = tf;
+
+            const double ms = 80;                   // quick, but not instant
+            tf.BeginAnimation(TranslateTransform.XProperty,
+                              new DoubleAnimation(toX, TimeSpan.FromMilliseconds(ms)));
+            tf.BeginAnimation(TranslateTransform.YProperty,
+                              new DoubleAnimation(toY, TimeSpan.FromMilliseconds(ms)));
+        }
+
+        public static void AnimateShadowDepth(DropShadowEffect shadow, double toDepth) {
+            const double ms = 80;
+            shadow.BeginAnimation(DropShadowEffect.ShadowDepthProperty,
+                                  new DoubleAnimation(toDepth, TimeSpan.FromMilliseconds(ms)));
         }
     }
 }

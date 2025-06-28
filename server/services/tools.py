@@ -6,4 +6,4 @@ class Credits:
     ORANGE = 'orange'
     PURPLE = 'purple'
     BLACK = 'black'
-    TEAL = 'teal'
+    CYAN = 'green'
