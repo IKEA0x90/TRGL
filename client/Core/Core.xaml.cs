@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
 
 namespace TRGLC 
@@ -11,6 +12,9 @@ namespace TRGLC
     public partial class MainWindow : Window {
         private Border last_clicked;
         private Dictionary<Border, StickyPanel> stickyPanels;
+
+        public Duration AnimationDuration { get; private set; }
+        public TimeSpan AnimationTime { get; private set; }
 
         public MainWindow() {
             InitializeComponent();
@@ -136,15 +140,22 @@ namespace TRGLC
                 return;
             }
 
-            if (!reverse) {
-                Color color = (Color)ColorConverter.ConvertFromString(stickyPanel.backcolor);
-                stickyButton.Background = new SolidColorBrush(color);
-            } else {
-                Color color = (Color)ColorConverter.ConvertFromString(stickyPanel.forecolor);
-                stickyButton.Background = new SolidColorBrush(color);
+            Color fromColor = (Color)ColorConverter.ConvertFromString(reverse ? stickyPanel.backcolor : stickyPanel.forecolor);
+            Color toColor = (Color)ColorConverter.ConvertFromString(reverse ? stickyPanel.forecolor : stickyPanel.backcolor);
 
-                double moveBy = stickyPanel.restDepth / 2;
+            if (!(stickyButton.Background is SolidColorBrush brush) || brush.IsFrozen) {
+                brush = new SolidColorBrush(fromColor);
+                stickyButton.Background = brush;
             }
+
+            var colorAnim = new ColorAnimation {
+                From = fromColor,
+                To = toColor,
+                Duration = new Duration(AnimationTime),
+                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
+            };
+
+            brush.BeginAnimation(SolidColorBrush.ColorProperty, colorAnim);
 
             if (stickyButton.Effect is DropShadowEffect shadow) {
                 double originalDepth = shadow.ShadowDepth;
