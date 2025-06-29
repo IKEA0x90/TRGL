@@ -35,7 +35,7 @@ namespace TRGLC
                     case "Common":
                         this.panel = null;
                         this.forecolor = "#FFFFFF";
-                        this.backcolor = "#FF555555";
+                        this.backcolor = "#FF919191";
                         return;
 
                     case "Uncommon":
@@ -83,19 +83,19 @@ namespace TRGLC
                     case "Profiles":
                         this.panel = null;
                         this.forecolor = "#FFFFFF";
-                        this.backcolor = "#FF555555";
+                        this.backcolor = "#FF919191";
                         return;
 
                     case "Lobbies":
                         this.panel = null;
                         this.forecolor = "#FFFFFF";
-                        this.backcolor = "#FF555555";
+                        this.backcolor = "#FF919191";
                         return;
 
                     default:
                         this.panel = null;
                         this.forecolor = "#FFFFFF";
-                        this.backcolor = "#FF555555";
+                        this.backcolor = "#FF919191";
                         return;
                 }
             }
