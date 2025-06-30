@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
+using System.Windows.Media.Imaging;
+using XamlAnimatedGif;
 
 namespace TRGLC 
 {
@@ -113,6 +116,13 @@ namespace TRGLC
                     stickyButton.MouseLeftButtonDown += StickyButton_MouseLeftButtonDown;
                 }
             }
+
+            matchingElements = Services.Services.FindChildrenWithTag(this, "CreditsImage");
+            foreach (FrameworkElement element in matchingElements) {
+                if (element is Image creditsImage) {
+                    creditsImage.Loaded += CreditsImage_Loaded;
+                }
+            }
         }
 
         private void StickyButton_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
@@ -176,6 +186,22 @@ namespace TRGLC
 
         private void ChangePanel(object sender) {
             
+        }
+
+        private void CreditsImage_Loaded(object sender, RoutedEventArgs e) {
+            var image = sender as Image;
+            if (image == null) return;
+
+            image.Dispatcher.BeginInvoke(new Action(() =>
+            {
+                double actualWidth = image.ActualWidth;
+                double actualHeight = image.ActualHeight;
+
+                if (actualWidth > 0 && actualHeight > 0) {
+                    image.Width = actualWidth * 0.5;
+                    image.Height = actualHeight * 0.5;
+                }
+            }), System.Windows.Threading.DispatcherPriority.Loaded);
         }
     }
 }

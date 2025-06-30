@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
         xmlns:local="clr-namespace:TRGLC"
         xmlns:shop="clr-namespace:TRGLC.Shop"
         mc:Ignorable="d"
@@ -157,16 +157,15 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Image Grid.Column="0" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/white_credits.gif"/>
-                <Image Grid.Column="1" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/yellow_credits.gif"/>
-                <Image Grid.Column="2" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/orange_credits.gif"/>
-                <Image Grid.Column="3" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/red_credits.gif"/>
+                <Image Tag="CreditsImage" Grid.Column="0" gif:AnimationBehavior.SourceUri="/TRGLC;component/resources/credits/white_credits.gif"/>
+                <Image Tag="CreditsImage" Grid.Column="1" gif:AnimationBehavior.SourceUri="/TRGLC;component/resources/credits/yellow_credits.gif"/>
+                <Image Tag="CreditsImage" Grid.Column="2" gif:AnimationBehavior.SourceUri="/TRGLC;component/resources/credits/orange_credits.gif"/>
+                <Image Tag="CreditsImage" Grid.Column="3" gif:AnimationBehavior.SourceUri="/TRGLC;component/resources/credits/red_credits.gif"/>
 
-                <Image Grid.Column="4" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/blue_credits.gif"/>
-                <Image Grid.Column="5" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/purple_credits.gif"/>
-                <Image Grid.Column="6" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/cyan_credits.gif"/>
-                <Image Grid.Column="7" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/black_credits.gif"/>
-
+                <Image Tag="CreditsImage" Grid.Column="4" gif:AnimationBehavior.SourceUri="/TRGLC;component/resources/credits/blue_credits.gif"/>
+                <Image Tag="CreditsImage" Grid.Column="5" gif:AnimationBehavior.SourceUri="/TRGLC;component/resources/credits/purple_credits.gif"/>
+                <Image Tag="CreditsImage" Grid.Column="6" gif:AnimationBehavior.SourceUri="/TRGLC;component/resources/credits/cyan_credits.gif"/>
+                <Image Tag="CreditsImage" Grid.Column="7" gif:AnimationBehavior.SourceUri="/TRGLC;component/resources/credits/black_credits.gif"/>
             </Grid>
 
             <Grid Grid.Row="1">
