@@ -16,24 +16,25 @@
         ScrollViewer.VerticalScrollBarVisibility="Disabled" 
         WindowStartupLocation="CenterScreen" Background="#FF161332" FontFamily="./#Bombardier">
 
+    <!-- Root layout -->
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Grid VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <!-- Grid 1: Buttons -->
+        <Grid VerticalAlignment="Top" >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
@@ -69,7 +70,7 @@
                        FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier"/>
             </Border>
 
-            <Border Grid.Column="3" Background="Yellow" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
+            <Border Grid.Column="0" Grid.Row="1" Background="Yellow" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
                     x:Name="Boss" Tag="StickyButton">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
@@ -79,7 +80,7 @@
                        />
             </Border>
 
-            <Border Grid.Column="0" Background="#FFCD00CD" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
+            <Border Grid.Column="1" Background="#FFCD00CD" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
                     x:Name="Void" Tag="StickyButton" Grid.Row="1">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
@@ -89,7 +90,7 @@
                        />
             </Border>
 
-            <Border Grid.Column="1" Background="Blue" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
+            <Border Grid.Column="2" Background="Blue" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
                     x:Name="Lunar" Tag="StickyButton" Grid.Row="1">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
@@ -97,9 +98,18 @@
                 <TextBlock Text="Lunar" HorizontalAlignment="Center" VerticalAlignment="Center" 
                        FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier" TextDecorations="{x:Null}" Foreground="White"/>
             </Border>
+        </Grid>
 
-            <Border Grid.Column="2" Background="#FFFF8000" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
-                    x:Name="Equipment" Tag="StickyButton" Grid.Row="1">
+        <Grid VerticalAlignment="Top"
+              Grid.Column="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Border Background="#FFFF8000" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
+                    x:Name="Equipment" Tag="StickyButton" Grid.Row="0">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
                 </Border.Effect>
@@ -107,7 +117,7 @@
                        FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier" Foreground="White"/>
             </Border>
 
-            <Border Grid.Column="3" Background="Gray" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
+            <Border Background="Gray" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
                     x:Name="Utility" Tag="StickyButton" Grid.Row="1">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
@@ -117,13 +127,14 @@
             </Border>
         </Grid>
 
-        <Grid></Grid>
+        <!-- Grid 2: Items -->
+        <Grid Grid.Row="1"></Grid>
 
+        <!-- Grid 3: Item Details -->
+        <Grid Grid.Row="1"></Grid>
+
+        <!-- Grid 4: Credits -->
         <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -192,24 +203,10 @@
 
             </Grid>
 
-            <Border Grid.Row="0" Grid.Column="2" Background="White" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
-                    x:Name="Profiles" Tag="StickyButton">
-                <Border.Effect>
-                    <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
-                </Border.Effect>
-                <TextBlock Text="Profiles" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                       FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier"/>
-            </Border>
+        </Grid>
 
-            <Border Grid.Row="1" Grid.Column="2" Background="White" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
-                    x:Name="Lobbies" Tag="StickyButton">
-                <Border.Effect>
-                    <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
-                </Border.Effect>
-                <TextBlock Text="Lobbies" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                       FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier"/>
-            </Border>
-
+        <!-- Grid 5: Extra -->
+        <Grid Grid.Row="2" Grid.Column="2">
         </Grid>
         
     </Grid>
