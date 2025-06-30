@@ -107,14 +107,14 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            
+
             <Border Background="#FFFF8000" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
                     x:Name="Equipment" Tag="StickyButton" Grid.Row="0">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
                 </Border.Effect>
                 <TextBlock Text="Equipment" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                       FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier" Foreground="White"/>
+                       FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier" Foreground="Black"/>
             </Border>
 
             <Border Background="Gray" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
@@ -128,10 +128,14 @@
         </Grid>
 
         <!-- Grid 2: Items -->
-        <Grid Grid.Row="1"></Grid>
+        <Grid Grid.Row="1">
+            <Border BorderBrush="#FF3E3687" BorderThickness="2"/>
+        </Grid>
 
         <!-- Grid 3: Item Details -->
-        <Grid Grid.Row="1"></Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Border BorderBrush="#FF3E3687" BorderThickness="2"/>
+        </Grid>
 
         <!-- Grid 4: Credits -->
         <Grid Grid.Row="2">
@@ -157,7 +161,7 @@
                 <Image Grid.Column="1" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/yellow_credits.gif"/>
                 <Image Grid.Column="2" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/orange_credits.gif"/>
                 <Image Grid.Column="3" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/red_credits.gif"/>
-                
+
                 <Image Grid.Column="4" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/blue_credits.gif"/>
                 <Image Grid.Column="5" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/purple_credits.gif"/>
                 <Image Grid.Column="6" gif:ImageBehavior.AnimatedSource="/TRGLC;component/resources/credits/cyan_credits.gif"/>
@@ -206,17 +210,31 @@
         </Grid>
 
         <!-- Grid 5: Extra -->
-        <Grid Grid.Row="2" Grid.Column="2">
-            <Border Grid.Row="0" Grid.Column="2" Background="White" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
-                    x:Name="Profiles" Tag="StickyButton">
-                <Border.Effect>
-                    <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
-                </Border.Effect>
-                <TextBlock Text="Back" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                       FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier"/>
-            </Border>
+        <Grid Grid.Row="3" Grid.Column="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" Background="White" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
+                        x:Name="Profiles" Tag="StickyButton">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
+                    </Border.Effect>
+                    <TextBlock Text="Profiles" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                            FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier"/>
+                </Border>
+                <Border Grid.Row="1" Background="White" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
+                        x:Name="Lobbies" Tag="StickyButton">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="6"/>
+                    </Border.Effect>
+                    <TextBlock Text="Lobbies" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                            FontSize="26" FontFamily="pack://application:,,,/resources/main/#Bombardier"/>
+                </Border>
+            </Grid>
         </Grid>
-        
     </Grid>
 
 </Window>
