@@ -129,6 +129,7 @@
 
         <!-- Grid 2: Items -->
         <Grid Grid.Row="1">
+            <shop:ItemGrid></shop:ItemGrid>
             <Border BorderBrush="#FF3E3687" BorderThickness="2"/>
         </Grid>
 

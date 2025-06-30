@@ -14,17 +14,17 @@
             </Border.Effect>
         </Border>
 
-        <Border Background="White" CornerRadius="8" Cursor="Hand"
-                    Margin="2" Grid.RowSpan="2">
-            <Border.Effect>
-                <BlurEffect KernelType="Box" Radius="3.4"/>
-            </Border.Effect>
-        </Border>
-
         <Border Background="#FFFFFF" CornerRadius="8" Cursor="Hand"
                     Tag="Item" Opacity="0.25" Margin="2" Grid.RowSpan="2">
             <Border.Effect>
                 <BlurEffect KernelType="Box" Radius="1"/>
+            </Border.Effect>
+        </Border>
+
+        <Border Background="White" CornerRadius="8" Cursor="Hand"
+                    Margin="2" Grid.RowSpan="2" Panel.ZIndex="-1" Opacity="0">
+            <Border.Effect>
+                <BlurEffect KernelType="Box" Radius="3.4"/>
             </Border.Effect>
         </Border>
     </Grid>
