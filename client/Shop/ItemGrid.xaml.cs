@@ -25,8 +25,7 @@ namespace TRGLC.Shop {
             if (parentGrid != null) {
                 var effectBorder = parentGrid.FindName("ItemLight") as Border;
                 if (effectBorder != null) {
-                    effectBorder.Opacity = 1;
-                    effectBorder.Background = new SolidColorBrush(Colors.Orange);
+                    effectBorder.Opacity = 0.7;
                 }
             }
         }

@@ -5,28 +5,43 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TRGLC.Shop"
              mc:Ignorable="d" 
-             d:DesignHeight="260" d:DesignWidth="260">
+             d:DesignHeight="264" d:DesignWidth="264">
     <Grid>
-        <Border Cursor="Hand"
-                    Grid.RowSpan="2" BorderBrush="#FF292929" BorderThickness="2" CornerRadius="9"
-                    IsHitTestVisible="False" Panel.ZIndex="-2">
+        <Grid.Resources>
+            <LinearGradientBrush x:Key="GlassGradient" StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#20FFFFFF" Offset="0.0"/>
+                <GradientStop Color="#10FFFFFF" Offset="0.3"/>
+                <GradientStop Color="#08080810" Offset="0.7"/>
+                <GradientStop Color="#30000030" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Resources>
+
+        <Border BorderBrush="#3AFFFFFF" BorderThickness="2" CornerRadius="10">
             <Border.Effect>
-                <DropShadowEffect BlurRadius="1" RenderingBias="Quality" ShadowDepth="2"/>
+                <DropShadowEffect BlurRadius="8" ShadowDepth="1" Opacity="0.4"/>
             </Border.Effect>
         </Border>
 
-        <Border Background="#FFFFFF" CornerRadius="8" Cursor="Hand"
-                    Tag="ItemButton" Opacity="0.25" Margin="2" Grid.RowSpan="2">
+        <Border Background="#25FFFFFF" CornerRadius="8" Cursor="Hand"
+                    Tag="ItemButton" Margin="4" Grid.RowSpan="5">
             <Border.Effect>
                 <BlurEffect KernelType="Box" Radius="1"/>
             </Border.Effect>
         </Border>
 
-        <Border Background="White" CornerRadius="8" Cursor="Hand"
-                    IsHitTestVisible="False" x:Name="ItemLight" Margin="2" Grid.RowSpan="2" Panel.ZIndex="-1" Opacity="0">
-            <Border.Effect>
-                <BlurEffect KernelType="Box" Radius="3.4"/>
-            </Border.Effect>
+        <Border CornerRadius="8" Cursor="Hand"
+            Opacity="0" IsHitTestVisible="False" x:Name="ItemLight" Margin="4" Panel.ZIndex="-1">
+            <Border.Background>
+                <RadialGradientBrush GradientOrigin="0.5,0.5" Center="0.5,0.5" RadiusX="1" RadiusY="1">
+                    <GradientStop Color="#99FFFFFF" Offset="1.0"/>
+                    <GradientStop Color="#FFF9DC3C" Offset="0.0"/>
+                </RadialGradientBrush>
+            </Border.Background>
         </Border>
+
+        <Border Background="{StaticResource GlassGradient}" CornerRadius="8" Cursor="Hand"
+                    Panel.ZIndex="-1" Tag="ItemGlass" Margin="4">
+        </Border>
+
     </Grid>
 </UserControl>
