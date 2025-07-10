@@ -6,6 +6,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
+using System.Windows.Media.Imaging;
 
 namespace TRGLC 
 {
@@ -28,6 +29,8 @@ namespace TRGLC
             public UserControl panel;
             public string forecolor;
             public string backcolor;
+            public string foreimage;
+            public string backimage;
             public double restDepth;
 
             public StickyPanel(Border button) {
@@ -40,66 +43,88 @@ namespace TRGLC
                         this.panel = null;
                         this.forecolor = "#FFFFFF";
                         this.backcolor = "#FF919191";
+                        this.foreimage = "BgCommonLight";
+                        this.backimage = "BgCommonDark";
                         return;
 
                     case "Uncommon":
                         this.panel = null;
                         this.forecolor = "#FF00FF00";
                         this.backcolor = "#FF008700";
+                        this.foreimage = "BgUncommonLight";
+                        this.backimage = "BgUncommonDark";
                         return;
 
                     case "Legendary":
                         this.panel = null;
                         this.forecolor = "#FFFF0000";
                         this.backcolor = "#FF870000";
+                        this.foreimage = "BgLegendaryLight";
+                        this.backimage = "BgLegendaryDark";
                         return;
 
                     case "Boss":
                         this.panel = null;
                         this.forecolor = "#FFFFFF00";
                         this.backcolor = "#FF979700";
+                        this.foreimage = "BgBossLight";
+                        this.backimage = "BgBossDark";
                         return;
 
                     case "Void":
                         this.panel = null;
                         this.forecolor = "#FFCD00CD";
                         this.backcolor = "#FF6C006C";
+                        this.foreimage = "BgVoidLight";
+                        this.backimage = "BgVoidDark";
                         return;
 
                     case "Lunar":
                         this.panel = null;
                         this.forecolor = "#FF0000FF";
                         this.backcolor = "#FF000095";
+                        this.foreimage = "BgLunarLight";
+                        this.backimage = "BgLunarDark";
                         return;
 
                     case "Equipment":
                         this.panel = null;
                         this.forecolor = "#FFFF8000";
                         this.backcolor = "#FF8B4600";
+                        this.foreimage = "BgEquipmentLight";
+                        this.backimage = "BgEquipmentDark";
                         return;
 
                     case "Utility":
                         this.panel = null;
                         this.forecolor = "#FF808080";
                         this.backcolor = "#FF2E2E2E";
+                        this.foreimage = "BgUntieredLight";
+                        this.backimage = "BgUntieredDark";
                         return;
 
                     case "Profiles":
                         this.panel = null;
                         this.forecolor = "#FFFFFF";
                         this.backcolor = "#FF919191";
+                        this.foreimage = "BgCommonLight3";
+                        this.backimage = "BgCommonDark3";
                         return;
 
                     case "Lobbies":
                         this.panel = null;
                         this.forecolor = "#FFFFFF";
                         this.backcolor = "#FF919191";
+                        this.foreimage = "BgCommonLight2";
+                        this.backimage = "BgCommonDark2";
                         return;
 
                     default:
                         this.panel = null;
                         this.forecolor = "#FFFFFF";
                         this.backcolor = "#FF919191";
+                        this.foreimage = "BgCommonLight";
+                        this.backimage = "BgCommonDark";
                         return;
                 }
             }
@@ -147,6 +172,9 @@ namespace TRGLC
                 return;
             }
 
+            stickyButton.Background = (ImageBrush)FindResource(reverse ? stickyPanel.foreimage : stickyPanel.backimage);
+
+            /*
             Color fromColor = (Color)ColorConverter.ConvertFromString(reverse ? stickyPanel.backcolor : stickyPanel.forecolor);
             Color toColor = (Color)ColorConverter.ConvertFromString(reverse ? stickyPanel.forecolor : stickyPanel.backcolor);
 
@@ -163,6 +191,7 @@ namespace TRGLC
             };
 
             brush.BeginAnimation(SolidColorBrush.ColorProperty, colorAnim);
+            */
 
             if (stickyButton.Effect is DropShadowEffect shadow) {
                 double originalDepth = shadow.ShadowDepth;

@@ -4,8 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TRGLC.Shop"
+             xmlns:shaders="clr-namespace:TRGLC.Shaders"
              mc:Ignorable="d" 
-             d:DesignHeight="264" d:DesignWidth="264">
+             d:DesignHeight="266" d:DesignWidth="266">
+
     <Grid>
         <Grid.Resources>
             <LinearGradientBrush x:Key="GlassGradient" StartPoint="0,0" EndPoint="1,1">
@@ -15,33 +17,61 @@
                 <GradientStop Color="#30000030" Offset="1.0"/>
             </LinearGradientBrush>
         </Grid.Resources>
-
+        
         <Border BorderBrush="#3AFFFFFF" BorderThickness="2" CornerRadius="10">
             <Border.Effect>
-                <DropShadowEffect BlurRadius="8" ShadowDepth="1" Opacity="0.4"/>
+                <DropShadowEffect BlurRadius="8" ShadowDepth="1" Opacity="1"/>
             </Border.Effect>
         </Border>
 
         <Border Background="#25FFFFFF" CornerRadius="8" Cursor="Hand"
-                    Tag="ItemButton" Margin="4" Grid.RowSpan="5">
+                    Tag="ItemButton" Margin="4">
+
             <Border.Effect>
                 <BlurEffect KernelType="Box" Radius="1"/>
             </Border.Effect>
         </Border>
 
+        <!--
         <Border CornerRadius="8" Cursor="Hand"
             Opacity="0" IsHitTestVisible="False" x:Name="ItemLight" Margin="4" Panel.ZIndex="-1">
             <Border.Background>
-                <RadialGradientBrush GradientOrigin="0.5,0.5" Center="0.5,0.5" RadiusX="1" RadiusY="1">
-                    <GradientStop Color="#99FFFFFF" Offset="1.0"/>
-                    <GradientStop Color="#FFF9DC3C" Offset="0.0"/>
+                <RadialGradientBrush GradientOrigin="0.3,0.3" Center="0.3,0.3" RadiusX="1" RadiusY="1">
+                    <GradientStop Color="#FFF9DC3C" Offset="0" />
+                    <GradientStop Color="#66F9DC3C" Offset="0.3" />
+                    <GradientStop Color="#22F9DC3C" Offset="0.65" />
+                    <GradientStop Color="#00F9DC3C" Offset="1" />
                 </RadialGradientBrush>
             </Border.Background>
         </Border>
+        -->
 
         <Border Background="{StaticResource GlassGradient}" CornerRadius="8" Cursor="Hand"
                     Panel.ZIndex="-1" Tag="ItemGlass" Margin="4">
         </Border>
+
+        <Image Panel.ZIndex="-2" 
+               Source="/TRGLC;component/resources/other/Alien_Head.png" Margin="5">
+        </Image>
+
+        <Border Panel.ZIndex="-3" CornerRadius="8">
+            <Image SizeChanged="BG_SizeChanged"
+                   Source="/TRGLC;component/resources/BG/BgLegendaryDark.jpg" Margin="5">
+            </Image>
+        </Border>
+
+        <!--
+        <Border Background="#FF00FF">
+            <Border.Effect>
+                <shaders:ItemGlow 
+                    OutlineColor="#FF00FF" 
+                    GlowColor="#FF0"
+                    Threshold="0.1"
+                    GlowStrength="0.9"
+                    GlowRadius="1"/>
+            </Border.Effect>
+        </Border>
+        -->
 
     </Grid>
 </UserControl>

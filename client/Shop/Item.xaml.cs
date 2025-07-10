@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace TRGLC.Shop {
-    /// <summary>
-    /// Interaction logic for Item.xaml
-    /// </summary>
     public partial class Item : UserControl {
         public Item() {
             InitializeComponent();
+        }
+
+        private void BG_SizeChanged(object sender, SizeChangedEventArgs e) {
+            var image = sender as Image;
+            image.Clip = new RectangleGeometry {
+                Rect = new Rect(0, 0, image.ActualWidth, image.ActualHeight),
+                RadiusX = 8,
+                RadiusY = 8
+            };
         }
     }
 }

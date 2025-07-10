@@ -31,10 +31,10 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -80,6 +80,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Services\Services.cs" />
+    <Compile Include="Shaders\ItemGlow.cs" />
     <Compile Include="Shop\Item.xaml.cs">
       <DependentUpon>Item.xaml</DependentUpon>
     </Compile>
@@ -98,6 +99,10 @@
       <DependentUpon>Core.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="resources\BG\Backgrounds.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Shop\Item.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -167,6 +172,33 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resources\credits\cyan_credits.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\other\Alien_Head.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\BG\BgBossLight.jpg" />
+    <Resource Include="resources\BG\BgCommonLight.jpg" />
+    <Resource Include="resources\BG\BgEquipmentLight.jpg" />
+    <Resource Include="resources\BG\BgLegendaryLight.jpg" />
+    <Resource Include="resources\BG\BgLunarLight.jpg" />
+    <Resource Include="resources\BG\BgUncommonLight.jpg" />
+    <Resource Include="resources\BG\BgUntieredLight.jpg" />
+    <Resource Include="resources\BG\BgVoidLight.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\BG\BgBossDark.jpg" />
+    <Resource Include="resources\BG\BgCommonDark.jpg" />
+    <Resource Include="resources\BG\BgEquipmentDark.jpg" />
+    <Resource Include="resources\BG\BgLegendaryDark.jpg" />
+    <Resource Include="resources\BG\BgLunarDark.jpg" />
+    <Resource Include="resources\BG\BgUncommonDark.jpg" />
+    <Resource Include="resources\BG\BgUntieredDark.jpg" />
+    <Resource Include="resources\BG\BgVoidDark.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\BG\BgCommonDark2.jpg" />
+    <Resource Include="resources\BG\BgCommonLight2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

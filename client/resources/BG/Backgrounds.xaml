@@ -1,0 +1,126 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Dark backgrounds -->
+    <ImageBrush x:Key="BgCommonDark"
+            ImageSource="/TRGLC;component/resources/BG/BgCommonDark.jpg"
+            Stretch="UniformToFill"
+            Viewbox="0.016,0.1,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgCommonDark2"
+            ImageSource="/TRGLC;component/resources/BG/BgCommonDark2.jpg"
+            Stretch="UniformToFill"
+            Viewbox="0.016,0.4,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgCommonDark3"
+            ImageSource="/TRGLC;component/resources/BG/BgCommonDark2.jpg"
+            Stretch="UniformToFill"
+            Viewbox="0.016,0.2,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgUncommonDark"
+            ImageSource="/TRGLC;component/resources/BG/BgUncommonDark.jpg" 
+            Stretch="UniformToFill"
+            Viewbox="0.016,-0.2,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgLegendaryDark"
+            ImageSource="/TRGLC;component/resources/BG/BgLegendaryDark.jpg" 
+            Stretch="UniformToFill"
+            Viewbox="0.016,0.12,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgEquipmentDark"
+            ImageSource="/TRGLC;component/resources/BG/BgEquipmentDark.jpg" 
+            Stretch="UniformToFill"
+            Viewbox="0.016,0.3,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgVoidDark"
+            ImageSource="/TRGLC;component/resources/BG/BgVoidDark.jpg" 
+            Stretch="UniformToFill"
+            Viewbox="0.016,0.185,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgLunarDark"
+            ImageSource="/TRGLC;component/resources/BG/BgLunarDark.jpg" 
+            Stretch="UniformToFill"
+            Viewbox="0.016,0.25,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgBossDark"
+            ImageSource="/TRGLC;component/resources/BG/BgBossDark.jpg" 
+            Stretch="UniformToFill"
+            Viewbox="0.016,0.4,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgUntieredDark"
+            ImageSource="/TRGLC;component/resources/BG/BgUntieredDark.jpg" 
+            Stretch="UniformToFill"
+            Viewbox="0.016,-0.4,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <!-- Light backgrounds -->
+    <ImageBrush x:Key="BgCommonLight"
+                ImageSource="/TRGLC;component/resources/BG/BgCommonLight.jpg"
+                Stretch="UniformToFill"
+                Viewbox="0.016,0.1,0.968,1"
+                ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgCommonLight2"
+            ImageSource="/TRGLC;component/resources/BG/BgCommonLight2.jpg"
+            Stretch="UniformToFill"
+            Viewbox="0.016,0.4,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgCommonLight3"
+            ImageSource="/TRGLC;component/resources/BG/BgCommonLight2.jpg"
+            Stretch="UniformToFill"
+            Viewbox="0.016,0.2,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgUncommonLight"
+            ImageSource="/TRGLC;component/resources/BG/BgUncommonLight.jpg" 
+            Stretch="UniformToFill"
+            Viewbox="0.016,-0.2,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgLegendaryLight"
+            ImageSource="/TRGLC;component/resources/BG/BgLegendaryLight.jpg" 
+            Stretch="UniformToFill"
+            Viewbox="0.016,0.12,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgEquipmentLight"
+            ImageSource="/TRGLC;component/resources/BG/BgEquipmentLight.jpg" 
+            Stretch="UniformToFill"
+            Viewbox="0.016,0.3,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgVoidLight"
+            ImageSource="/TRGLC;component/resources/BG/BgVoidLight.jpg" 
+            Stretch="UniformToFill"
+            Viewbox="0.016,0.185,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgLunarLight"
+            ImageSource="/TRGLC;component/resources/BG/BgLunarLight.jpg" 
+            Stretch="UniformToFill"
+            Viewbox="0.016,0.25,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgBossLight"
+            ImageSource="/TRGLC;component/resources/BG/BgBossLight.jpg" 
+            Stretch="UniformToFill"
+            Viewbox="0.016,0.4,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+    <ImageBrush x:Key="BgUntieredLight"
+            ImageSource="/TRGLC;component/resources/BG/BgUntieredLight.jpg" 
+            Stretch="UniformToFill"
+            Viewbox="0.016,-0.4,0.968,1"
+            ViewboxUnits="RelativeToBoundingBox"/>
+
+</ResourceDictionary>
