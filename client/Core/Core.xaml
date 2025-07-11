@@ -147,9 +147,16 @@
         <Grid Grid.Row="1">
             <shop:ItemGrid></shop:ItemGrid>
         </Grid>
-
+ 
         <!-- Grid 3: Item Details -->
         <Grid Grid.Row="1" Grid.Column="1">
+            <StackPanel>
+
+                <TextBlock Text="Disposable Missile Launcher" Grid.Column="0" TextAlignment ="Center" VerticalAlignment="Center" 
+                       FontSize="30" FontFamily="pack://application:,,,/resources/main/#Bombardier" Foreground="White"
+                       TextWrapping="WrapWithOverflow"/>
+
+            </StackPanel>
         </Grid>
 
         <!-- Grid 4: Credits -->
@@ -157,7 +164,7 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
@@ -181,6 +188,7 @@
                 <Image Tag="CreditsImage" Grid.Column="5" gif:AnimationBehavior.SourceUri="/TRGLC;component/resources/credits/purple_credits.gif"/>
                 <Image Tag="CreditsImage" Grid.Column="6" gif:AnimationBehavior.SourceUri="/TRGLC;component/resources/credits/cyan_credits.gif"/>
                 <Image Tag="CreditsImage" Grid.Column="7" gif:AnimationBehavior.SourceUri="/TRGLC;component/resources/credits/black_credits.gif"/>
+                
             </Grid>
 
             <Grid Grid.Row="1">
@@ -230,6 +238,11 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
                 <Border Grid.Row="0" Padding="0" Margin="5" CornerRadius="8" Cursor="Hand"
                         x:Name="Profiles" Tag="StickyButton"

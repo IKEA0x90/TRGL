@@ -72,7 +72,7 @@
     <ImageBrush x:Key="BgCommonLight2"
             ImageSource="/TRGLC;component/resources/BG/BgCommonLight2.jpg"
             Stretch="UniformToFill"
-            Viewbox="0.016,0.4,0.968,1"
+            Viewbox="0.016,0.3,0.968,1"
             ViewboxUnits="RelativeToBoundingBox"/>
 
     <ImageBrush x:Key="BgCommonLight3"

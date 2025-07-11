@@ -215,6 +215,7 @@ namespace TRGLC
         }
 
         private void CreditsImage_Loaded(object sender, RoutedEventArgs e) {
+            /*
             var image = sender as Image;
             if (image == null) return;
 
@@ -228,6 +229,7 @@ namespace TRGLC
                     image.Height = actualHeight * 0.5;
                 }
             }), System.Windows.Threading.DispatcherPriority.Loaded);
+            */
         }
     }
 }
